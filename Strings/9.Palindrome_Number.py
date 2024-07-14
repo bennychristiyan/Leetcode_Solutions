@@ -37,7 +37,6 @@ class Solution:
     
 # 3.Using left, right pointers to check if MSB and LSB are same. 
 
-
 # Time complexity = O(n). Runtime = 63ms
 class Solution:
     def isPalindrome(self, x: int) -> bool:
