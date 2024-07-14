@@ -10,22 +10,24 @@ Explanation: 121 reads as 121 from left to right and from right to left."""
 # Time complexity = O(n). Runtime = 47ms
 class Solution:
     def isPalindrome(self, x: int) -> bool:
+        # x is converted into a string
         s = str(x)
         return s == s[::-1]
 
 
-# 2.Using 'i', 'j' pointers to check if the mirror character of each character is same. The given number is converted into a string. 'i' starts 
-# from left and 'j' starts from right. If 'i' and 'j' point to same character, update 'i' by adding 1 and 'j' by subtracting 1; else return False.
-# After 'i' becomes greater than 'j', return True
+# 2.Using 'i', 'j' pointers to check if the mirror character of each character is same.
 
 # Time complexity = O(n). Runtime = 48ms
 class Solution:
     def isPalindrome(self, x: int) -> bool:
+        # 'i' starts from left and 'j' starts from right
         i = 0
-        s = str(x)
         j = len(s) - 1
+        # x is converted into a string
+        s = str(x)
 
         while i <= j:
+            # If 'i' and 'j' point to same character, update 'i' by adding 1 and 'j' by subtracting 1 until 'i' becomes greater than 'j'
             if s[i] == s[j]:
                 i += 1
                 j -= 1
@@ -33,5 +35,33 @@ class Solution:
                 return False
         return True
     
+# 3.Using left, right pointers to check if MSB and LSB are same. 
+
+
+# Time complexity = O(n). Runtime = 63ms
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        # Returns False, if negative
+        if x < 0: return False
+
+        # Identifies the MSB place of x
+        div = 1
+        while x >= 10 * div:
+            div *= 10
+
+        while x:
+            # Returns the LSB
+            right = x % 10
+            # Returns the MSB
+            left = x // div
+
+            if left != right: return False
+
+            # x % div --> removes MSB and // 10 --> removes LSB
+            x = (x % div) // 10
+            # Since, 2 digits are removed, the div is divided by 100
+            div /= 100
+        
+        return True
 
         

@@ -7,9 +7,7 @@ Input: nums = [2,7,11,15], target = 9
 Output: [0,1]
 Explanation: Because nums[0] + nums[1] == 9, we return [0, 1]."""
 
-# 1.Using Hashmap(dictionary) to find the difference of the target and the element in the list in each iteration. If the difference is in the 
-# dictionary, return the index of the current element and the index(value) of the difference element(key) in the dictionary; else store the 
-# element as the key and the index as the value in the dictionary
+# 1.Using Hashmap(dictionary) to find the difference of the target and the element in the list in each iteration.
 
 # Time complexity = O(n). Runtime = 41ms
 class Solution:
@@ -18,8 +16,11 @@ class Solution:
 
         for i, n in enumerate(nums):
             diff = target - n
+            # If the difference is in the dictionary, return the index of the current element and the index(value) of the difference element(key) 
+            # in the dictionary
             if diff in dic:
                 return [dic[diff], i]
+            # else store the element as the key and the index as the value in the dictionary
             dic[n] = i
         return
 
