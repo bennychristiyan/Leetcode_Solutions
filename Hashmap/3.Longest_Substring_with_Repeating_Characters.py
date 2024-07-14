@@ -36,7 +36,7 @@ class Solution:
 # in the set (or list) by updating the 'l' during each iteration and that character is added to the set (or list). The max length is also 
 # calculated during each iteration and is returned after the loop ends
 
-# Time complexity = O(n^2). Runtime = 58ms            
+# Time complexity = O(n). Runtime = 58ms            
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         sets = set() # or []

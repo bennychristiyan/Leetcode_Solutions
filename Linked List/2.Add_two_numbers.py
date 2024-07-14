@@ -10,7 +10,7 @@ Explanation: 342 + 465 = 807."""
 
 # Normally, we have to do addition from right to left. But, since it is in reverse order, it is much easier for us to add(from left to right)
 
-# Time complexity = O(n). Runtime = 45ms
+# Time complexity = O(max(n1, n2)). Runtime = 45ms
 class ListNode:
     # Creates a new node. If no value is given, default value 0 is given
     def __init__(self, val=0, next=None):
