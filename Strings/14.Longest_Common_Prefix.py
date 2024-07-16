@@ -12,7 +12,8 @@ Explanation: There is no common prefix among the input strings."""
 
 # 1.Using string and string slicing to find the longest common prefix by comparing the 1st word with the other words
 
-# Time complexity = O(n). Runtime = 30ms
+# Time complexity = O(n * m), where n is the number of strings in the list 'strs', and 𝑚 is the length of the first string in strs. 
+# Runtime = 30ms
 class Solution:
     def longestCommonPrefix(self, strs):
         s = ""
@@ -35,7 +36,8 @@ class Solution:
 
 # 2.Using string and list indexing to find the longest common prefix by comparing the 1st word with the other words
 
-# Time complexity = O(n). Runtime = 41ms
+# Time complexity = O(n * m), where n is the number of strings in the list 'strs', and 𝑚 is the length of the first string in strs. 
+# Runtime = 41ms
 class Solution:
     def longestCommonPrefix(self, strs):
         res = ""
