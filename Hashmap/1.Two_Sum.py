@@ -9,7 +9,7 @@ Explanation: Because nums[0] + nums[1] == 9, we return [0, 1]."""
 
 # 1.Using Hashmap(dictionary) to find the difference of the target and the element in the list in each iteration.
 
-# Time complexity = O(n). Runtime = 41ms
+# Time complexity = O(n). Runtime = 41ms (Beats 99.72%)
 class Solution:
     def twoSum(self, nums, target):
         dic = {} #element(key) : index(value)
@@ -27,7 +27,7 @@ class Solution:
 # 2.Using 2 for loops to iterate through the list and check if the sum is equal to the target and are not same indices. If it is, return the 
 # indices of the 2 numbers.
 
-# Time complexity = O(n^2). Runtime = 3755ms
+# Time complexity = O(n^2). Runtime = 3755ms (Beats 5.00%)
 class Solution:
     def twoSum(self, nums, target):
         for i_x, x in enumerate(nums):

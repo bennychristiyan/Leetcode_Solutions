@@ -8,7 +8,7 @@ Explanation: The answer is "abc", with the length of 3."""
 
 # 1.Using Hashmap(Dictionary) to find the duplicate character of the current character.
 
-# Time complexity = O(n). Runtime = 49ms
+# Time complexity = O(n). Runtime = 49ms (Beats 84.09%)
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         my_dic = {} #character(key) : index(value)

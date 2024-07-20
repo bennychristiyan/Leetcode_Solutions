@@ -6,19 +6,9 @@ Input: x = 121
 Output: true
 Explanation: 121 reads as 121 from left to right and from right to left."""
 
-# 1.Using string slicing, compare the original string with the inversed string.  
+# 1.Using 'i', 'j' pointers to check if the mirror character of each character is same.
 
-# Time complexity = O(n). Runtime = 47ms
-class Solution:
-    def isPalindrome(self, x: int) -> bool:
-        # x is converted into a string
-        s = str(x)
-        return s == s[::-1]
-
-
-# 2.Using 'i', 'j' pointers to check if the mirror character of each character is same.
-
-# Time complexity = O(n). Runtime = 48ms
+# Time complexity = O(n). Runtime = 40ms (Beats 96.31%)
 class Solution:
     def isPalindrome(self, x: int) -> bool:
         # 'i' starts from left and 'j' starts from right
@@ -35,10 +25,19 @@ class Solution:
             else:
                 return False
         return True
-    
+
+# 2.Using string slicing, compare the original string with the inversed string.  
+
+# Time complexity = O(n). Runtime = 42ms (Beats 94.15%)
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        # x is converted into a string
+        s = str(x)
+        return s == s[::-1]
+
 # 3.Using left, right pointers to check if MSB and LSB are same. 
 
-# Time complexity = O(n). Runtime = 63ms
+# Time complexity = O(n). Runtime = 58ms (Beats 39.42%)
 class Solution:
     def isPalindrome(self, x: int) -> bool:
         # Returns False, if negative

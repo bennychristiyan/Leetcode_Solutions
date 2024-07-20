@@ -26,7 +26,7 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4."""
 
 # 1.Using switch case to calculate the value of the given Roman numeral to integer
 
-# Time complexity = O(n). Runtime = 37ms
+# Time complexity = O(n). Runtime = 35ms (Beats 96.64%)
 class Solution:
     def romanToInt(self, s: str) -> int:
 
@@ -64,7 +64,7 @@ class Solution:
             
 # 2.Using Dictionary to calculate the value of the given Roman numeral to integer
 
-# Time complexity = O(n). Runtime = 47ms
+# Time complexity = O(n). Runtime = 36ms (Beats 95.28%)
 class Solution:
     def romanToInt(self, s: str) -> int:
 
