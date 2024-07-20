@@ -10,7 +10,29 @@ Input: strs = ["dog","racecar","car"]
 Output: ""
 Explanation: There is no common prefix among the input strings."""
 
-# 1.Using string and string slicing to find the longest common prefix by comparing the 1st word with the other words
+# 1.Using string and list indexing to find the longest common prefix by comparing the 1st word and the last word only by sorting the list initially.
+# If the 1st word and the last word are same, then all the remaining words between them are also same
+
+# Time complexity = O(n * m * logn), where n is the number of strings in the list 'strs', and m is the length of the shortest string between the 
+# 1st and last strings. Runtime = 15ms
+# It is theoretically less efficient due to its O(n.mlogn) time complexity, but may perform better in practice due to reduced comparisons after 
+# sorting. It is particularly effective when the number of strings is large and the common prefix is expected to be relatively short.
+class Solution:
+    def longestCommonPrefix(self, strs):
+        ans=""
+        # Sort the given list in the alphabetical order
+        list=sorted(strs)
+        first=list[0]
+        last=list[-1]
+        for i in range(min(len(first),len(last))):
+            # If the character of first and last string in the list don't match, return ans
+            if(first[i]!=last[i]):
+                return ans
+            # else, add that character to the ans
+            ans+=first[i]
+        return ans
+
+# 2.Using string and string slicing to find the longest common prefix by comparing the 1st word with the other words
 
 # Time complexity = O(n * m), where n is the number of strings in the list 'strs', and 𝑚 is the length of the first string in strs. 
 # Runtime = 30ms
@@ -34,7 +56,7 @@ class Solution:
 
 
 
-# 2.Using string and list indexing to find the longest common prefix by comparing the 1st word with the other words
+# 3.Using string and list indexing to find the longest common prefix by comparing the 1st word with the other words
 
 # Time complexity = O(n * m), where n is the number of strings in the list 'strs', and 𝑚 is the length of the first string in strs. 
 # Runtime = 41ms
